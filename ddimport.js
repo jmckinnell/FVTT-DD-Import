@@ -532,7 +532,8 @@ class DDImporter extends  foundry.applications.api.HandlebarsApplicationMixin(fo
     if (source === "s3") {
       if (imagePath[0] == "/")
         imagePath = imagePath.slice(1)
-      imagePath = endpoint.protocol + '//' + bucket + '.' + endpoint.host + endpoint.path + imagePath;
+      //imagePath = endpoint.protocol + '//' + bucket + '.' + endpoint.host + endpoint.path + imagePath;
+        imagePath = endpoint.protocol + '//' + endpoint.host + '/' + bucket + endpoint.path + imagePath;
     }
     let newScene = new Scene({
       name: sceneName,
